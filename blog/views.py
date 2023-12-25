@@ -17,6 +17,7 @@ class PostListView(ListView):
 	template_name = 'blog/home.html'
 	context_object_name = 'posts'
 	ordering = ['-date_posted']
+	paginate_by = 5
 
 # This class-based view uses default Django template
 # by convention <app>/<model>_<view_type>.html - blog/post_detail.html
