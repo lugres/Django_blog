@@ -1,29 +1,21 @@
 from django.shortcuts import render
+from django.views.generic import ListView
 from .models import Post
 
-# Some dummy post data for testing purpose
-posts = [
-	{
-		'author': 'Angela Lu',
-		'title': 'Blog Post 1',
-		'content': 'First post content',
-		'date_posted': 'December 11, 2022'
-	},
-	{
-		'author': 'Jimmy Chin',
-		'title': 'Blog Post 2',
-		'content': 'Second post content',
-		'date_posted': 'December 15, 2022'
-	},
-]
-
-
+# Not used anymore, kept for demostartive purposes - compare with the next class-based view
 def  home(request):
 	context = {
 		'posts': Post.objects.all()
 	}
 
 	return render(request, 'blog/home.html', context)
+
+
+class PostListView(ListView):
+	model = Post
+	template_name = 'blog/home.html'
+	context_object_name = 'posts'
+	ordering = ['-date_posted']
 
 
 def about(request):
