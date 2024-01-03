@@ -6,6 +6,9 @@ The application is a simple blog, featuring user registration and
 password reset, login and logout system, user profiles with pictures,
 pagination, templates, database and more.
 
+You can explore deployed version here:
+https://www.lugres.com/
+
 
 Based on a free youtube series from Corey Schafer.
 You can find all the videos here:
